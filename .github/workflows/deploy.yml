@@ -3,7 +3,7 @@ name: Build & Deploy Angular Universal to Hostinger
 on:
   push:
     branches:
-      - main  # or your active branch
+      - main
 
 jobs:
   build-and-deploy:
@@ -33,5 +33,5 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/browser/
+          local-dir: dist/softics/browser/
           server-dir: public_html/
