@@ -34,36 +34,54 @@ export class HomeComponent {
 
   projects = [
     {
-      name: 'Red Lobster', 
-      img: '/images/food.jpg', 
+      name: 'Red Lobster',
+      img: '/images/food.jpg',
       description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
-      techStack:['Angular','Firebase','Lookup'],
-      linkToDemo:'',
-      linkToGithub:''
+      techStack: ['Angular', 'Firebase', 'Lookup'],
+      linkToDemo: '',
+      linkToGithub: ''
     },
     {
-      name: 'Mathology', 
-      img: '/images/maths.jpg', 
+      name: 'Mathology',
+      img: '/images/maths.jpg',
       description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
-      techStack:['Angular','Firebase','Lookup'],
-      linkToDemo:'',
-      linkToGithub:''
+      techStack: ['Angular', 'Firebase', 'Lookup'],
+      linkToDemo: '',
+      linkToGithub: ''
     },
     {
-      name: 'Wood Wonders', 
-      img: '/images/woodwork.jpg', 
+      name: 'Wood Wonders',
+      img: '/images/woodwork.jpg',
       description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
-      techStack:['Angular','Firebase','Lookup'],
-      linkToDemo:'',
-      linkToGithub:''
+      techStack: ['Angular', 'Firebase', 'Lookup'],
+      linkToDemo: '',
+      linkToGithub: ''
     },
     {
-      name: 'Book your Look', 
-      img: '/images/fashion.jpg', 
+      name: 'Book your Look',
+      img: '/images/fashion.jpg',
       description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
-      techStack:['Angular','Firebase','Lookup'],
-      linkToDemo:'',
-      linkToGithub:''
+      techStack: ['Angular', 'Firebase', 'Lookup'],
+      linkToDemo: '',
+      linkToGithub: ''
     },
   ]
+
+  services = [
+    {
+      name: 'I have an app idea',
+      description: 'I need to transform my vision into a market-ready product.',
+  icon:'icons/idea.svg'
+        },  
+    {
+      name: 'I naeed a team',
+      description: 'I want to hire top-tier developers for my project.',
+      icon:'icons/team.svg'
+        },  
+    {
+      name: 'I need to optomize my app',
+      description: 'I want to optimize and maintain my app for peak performance.',
+  icon:'icons/website.svg'
+        }
+    ]
 }

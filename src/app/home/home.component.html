@@ -68,12 +68,16 @@
 
 <!-- Projects -->
 <div class="flex flex-col items-center mx-auto px-6 py-8">
-  <h2 class="text-3xl font-bold text-center mb-12">My Projects</h2>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+  <h2 class="text-3xl font-bold text-center mb-12">See how we’ve Helped
+    <p class="text-color-terracota">Businesses Achieve Their Goals</p>
+  </h2>
+  <p class="py-7">We’ve helped startups, SMBs, and enterprises achieve remarkable outcomes with our innovative
+    solutions.</p>
+  <div class="grid grid-cols-1 px-20 md:grid-cols-2 lg:grid-cols-2 gap-10 ">
     <ng-container *ngFor="let project of projects">
       <!-- Project 1 (BCBSM) -->
       <div
-        class="project-card h-full p-7 bg-gray-50 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col">
+        class="project-card h-full p-7 bg-beige-light dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col">
         <div class="aspect-[16/9] overflow-hidden rounded-t-lg">
           <img [src]="project.img" [alt]="project.name" class="w-full h-full object-cover" />
         </div>
@@ -104,7 +108,37 @@
     </ng-container>
   </div>
   <a routerLink="/contact" (click)="goToContact()"
-        class="border-2 my-10 border-beige-dark text-beige-dark hover:text-gray-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold hover:dark:bg-gray-400 hover:dark:text-gray-900 hover:dark:border-gray-400 transition">
-        View All Case Studies
-      </a>
+    class="border-2 my-10 border-beige-dark text-beige-dark hover:text-gray-900 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold hover:dark:bg-gray-400 hover:dark:text-gray-900 hover:dark:border-gray-400 transition">
+    View All Case Studies
+  </a>
+</div>
+
+<div class="flex flex-col items-center px-6 py-8">
+  <span class="text-3xl font-bold text-center mb-12">Select Your
+    <span class="text-color-terracota">Bespoke</span> Person
+  </span>
+  <p class="py-8">Choose your path to digital success. Whether ideating, scaling, or optimizing, we’ve got you covered
+    with our expert solutions.</p>
+  <div class="grid grid-cols-1 px-64 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
+    <ng-container *ngFor="let service of services">
+      <!-- Project 1 (BCBSM) -->
+      <div class="flex flex-col items-center project-card bg-beige-light rounded-lg shadow-lg">
+        <div
+          class="flex flex-col items-center h-full p-7 border border-beige-dark bg-white rounded-lg overflow-hidden ">
+          <!-- <div class="aspect-[16/9] overflow-hidden rounded-t-lg"> -->
+          <img [src]="service.icon" [alt]="service.name" class="my-9 w-20 h-20 object-cover" />
+          <!-- </div> -->
+          <div class="p-4 flex-1 flex flex-col justify-between">
+            <div class="flex flex-col items-center text-center">
+              <h3 class="text-xl font-semibold mb-2">{{ service.name }}</h3>
+              <span>{{service.description}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="m-7 ">
+          <span class="cursor-pointer	hover:text-color-terracota hover:font-semibold ">Get started</span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
