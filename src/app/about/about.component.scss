@@ -1,0 +1,12 @@
+@keyframes scrollLoop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+.animate-scroll-loop {
+  animation: scrollLoop 20s linear infinite;
+}

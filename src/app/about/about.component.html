@@ -1,0 +1,40 @@
+<section id="about"
+  class="min-h-screen dark:bg-hero-dark text-gray-800 dark:text-gray-100 transition-colors duration-500 px-4 py-16 flex items-center">
+  <div class="container mx-auto max-w-5xl flex flex-col">
+
+    <!-- Text and Skills -->
+    <div class="flex justify-center flex-col items-center text-lg leading-relaxed ">
+
+      <!-- Skills -->
+
+      <section class="flex flex-col items-center w-full mb-6 py-16 text-center overflow-hidden">
+        <h2 class="text-3xl font-bold text-gray-800 dark:text-color-dark mb-8">My Skills</h2>
+
+        <div class="relative w-full overflow-hidden group">
+          <div class="flex animate-scroll-loop w-max whitespace-nowrap group-hover:[animation-play-state:paused]">
+
+            <!-- Repeat entire skills list twice inline -->
+            <ng-container *ngFor="let repeat of [1, 2,3]">
+              <ng-container *ngFor="let skill of skills">
+                <div
+                  class="inline-flex items-center gap-2 px-5 py-2 text-white dark:text-indigo-200 rounded-full text-lg font-medium shadow-sm min-w-fit mx-2">
+                  <img [src]="skill.icon" [alt]="skill.name" class="w-6 h-6 object-contain filter dark:invert" />
+                  <span class="hidden sm:inline text-color-dark font-bold">{{ skill.name }}</span>
+                </div>
+              </ng-container>
+            </ng-container>
+
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Resume Button -->
+      <a href="/resume/ManahilAmeer-CV.pdf" download
+        class="inline-block bg-gray-100 text-color-primary dark:bg-gray-800 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 hover:dark:bg-opacity-80 transition">
+        Download Resume
+      </a>
+    </div>
+  </div>
+  <!-- </div> -->
+</section>

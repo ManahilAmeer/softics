@@ -1,0 +1,96 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+@use '@angular/material/core/m2' as mat-core;
+
+
+html {
+  @include mat.theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    ));
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #4f46e5;
+  padding: 1rem;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.text-color-primary {
+  color: rgb(179 143 173);
+}
+
+.text-color-secondary {
+  color: rgb(64 39 77);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  transition: background-color ease 0.5s, color 0.5s;
+  @apply transition-colors duration-500;
+  @apply font-sans;
+
+}
+
+:root {
+  --primary: #4f46e5;
+  --secondary: #6b7280;
+  --dark: #1f2937;
+  --light: #f9fafb;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@include mat.core();
+
+
+$light-primary: mat-core.define-palette(mat-core.$indigo-palette);
+$light-accent: mat-core.define-palette(mat-core.$pink-palette);
+$dark-primary: mat-core.define-palette(mat-core.$deep-purple-palette);
+$dark-accent: mat-core.define-palette(mat-core.$cyan-palette);
+
+// 3. Define themes
+$light-theme: mat-core.define-light-theme((color: (primary: $light-primary,
+        accent: $light-accent,
+      )));
+
+$dark-theme: mat-core.define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+      )));
+
+// 4. Apply theme styles based on class
+.light-theme {
+  @include mat.all-component-themes($light-theme);
+}
+
+.dark-theme {
+  @include mat.all-component-themes($dark-theme);
+}
+
+html {
+  scroll-behavior: smooth;
+}

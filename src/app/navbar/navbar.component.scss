@@ -1,0 +1,32 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-theme {
+  background-color: var(--dark);
+  color: var(--light);
+}
+body.dark-theme{
+  background-color: var(--dark);
+  color: var(--dark);
+}
+
+button[mat-icon-button].light-theme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--light) !important;
+}
+
+button[mat-icon-button].dark-theme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--dark) !important;
+}
+.title:hover{
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+   <section id="contact">
+     <h2>Get In Touch</h2>
+     <form [formGroup]="formGroup">
+       <input type="text" id="name" formControlName="name" required placeholder="Your Name"/>
+       <input type="email" id="email" formControlName="email" required placeholder="Your Email"/>
+       <textarea id="message" formControlName="message" required placeholder="Your Message"></textarea>
+       <button (click)="onSubmit()">Send Message</button>
+     </form>
+   </section>
+   
