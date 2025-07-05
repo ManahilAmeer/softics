@@ -32,4 +32,38 @@ export class HomeComponent {
     { name: 'Postman', icon: '/icons/postman.svg' }
   ];
 
+  projects = [
+    {
+      name: 'Red Lobster', 
+      img: '/images/food.jpg', 
+      description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
+      techStack:['Angular','Firebase','Lookup'],
+      linkToDemo:'',
+      linkToGithub:''
+    },
+    {
+      name: 'Mathology', 
+      img: '/images/maths.jpg', 
+      description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
+      techStack:['Angular','Firebase','Lookup'],
+      linkToDemo:'',
+      linkToGithub:''
+    },
+    {
+      name: 'Wood Wonders', 
+      img: '/images/woodwork.jpg', 
+      description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
+      techStack:['Angular','Firebase','Lookup'],
+      linkToDemo:'',
+      linkToGithub:''
+    },
+    {
+      name: 'Book your Look', 
+      img: '/images/fashion.jpg', 
+      description: 'An Angular-based e-commerce platform with product filtering and cart functionality.',
+      techStack:['Angular','Firebase','Lookup'],
+      linkToDemo:'',
+      linkToGithub:''
+    },
+  ]
 }
