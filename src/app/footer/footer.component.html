@@ -1,1 +1,56 @@
-<p>footer works!</p>
+<section class="min-h-full bg-terracota-100">
+  <section class="p-52">
+    <!-- Contact Info -->
+    <div class="flex items-end">
+      <div class="w-3/6 flex flex-col items-start p-20">
+        <h2 class="text-5xl md:text-4xl font-bold mb-6 dark:text-color-dark transition-all duration-500 ease-in-out">
+          Ready to Transform Your Business? Take the
+          <span class="text-terracota-200 dark:text-gray-300 transition">First Step Today!</span>
+        </h2>
+        <p class="">Softics. Empowering businesses with secure, scalable, and innovative web and software solutions
+          since 2017.</p>
+      </div>
+      <div class="flex flex-col p-20">
+        <p>Call us</p>
+        <h2 class="font-bold text-xl">{{contactNumber}}</h2>
+      </div>
+      <div class="flex flex-col p-20">
+        <p>
+          Email Us
+        </p>
+        <h3 class="font-bold text-xl">{{contactEmail}}</h3>
+      </div>
+    </div>
+
+    <div class="m-20 h-px bg-terracota-200"></div>
+
+    <!-- Links -->
+    <div class="flex w-full justify-between	">
+      <div ngClass="" class="px-20 flex flex-col" *ngFor="let link of listOfLinks">
+        <p class="font-bold py-5">{{link.name}}</p>
+        <ng-container *ngFor="let item of link.list">
+          <a class="text-gray-400" href={{item.itemLink}}>{{item.itemName}}</a>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="m-20 h-px bg-terracota-200"></div>
+
+    <div class="flex justify-between items-end p-20">
+      <div class="flex flex-col ">
+        <div routerLink="/" class="font-sans title text-4xl font-bold text-terracota-200 dark:text-gray-100">Softics
+        </div>
+        <span>Softics. © All Rights Reserved 2025.</span>
+        <span>Version {{version}}</span>
+      </div>
+      <div class="flex items-center flex-col ">
+        <span>Accredited by:</span>
+        <div class="flex flex-row">
+          <img src="/icons/mulesoft.svg" class="p-2 w-12 h-12">
+          <img src="/icons/git.svg" class="w-12 h-12 p-2 ">
+          <img src="/icons/typescript.svg" class="p-2 w-12 h-12">
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
