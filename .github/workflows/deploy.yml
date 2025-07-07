@@ -13,6 +13,9 @@ jobs:
       - name: 📥 Checkout Code
         uses: actions/checkout@v3
 
+      - name: 📧 Notify on Success
+        run: echo "Deployment completed successfully on $(date)"
+
       - name: 🟢 Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -36,3 +39,7 @@ jobs:
           local-dir: dist/softics/browser/
           server-dir: public_html/
           dangerous-clean-slate: true
+      - name: 🏷️ Write Version Info
+        run: |
+          echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > src/version.json
+
