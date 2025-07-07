@@ -14,7 +14,7 @@
         experiences. From startups to enterprises, our tailored solutions empower success in the digital world.
       </p>
     </div>
-    <div class="flex justify-center space-x-4">
+    <div class="flex justify-center space-x-4  ">
       <a routerLink="/projects" (click)="goToProjects()"
         class="projects-button bg-color-terracota text-white dark:bg-gray-800 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 hover:dark:bg-opacity-80 transition">
         Book a Call
@@ -77,7 +77,7 @@
     <ng-container *ngFor="let project of projects">
       <!-- Project 1 (BCBSM) -->
       <div
-        class="project-card h-full p-7 bg-beige-light dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col">
+        class="project-card h-full p-7 bg-color-grey/30 dark:bg-gray-700 rounded-lg overflow-hidden shadow-lg flex flex-col">
         <div class="aspect-[16/9] overflow-hidden rounded-t-lg">
           <img [src]="project.img" [alt]="project.name" class="w-full h-full object-cover" />
         </div>
@@ -113,7 +113,8 @@
   </a>
 </div>
 
-<div class="flex flex-col items-center px-6 py-8">
+<!-- Services that we offer -->
+<div class="flex flex-col items-center px-6 py-32">
   <span class="text-3xl font-bold text-center mb-12">Select Your
     <span class="text-color-terracota">Bespoke</span> Person
   </span>
@@ -122,7 +123,7 @@
   <div class="grid grid-cols-1 px-64 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
     <ng-container *ngFor="let service of services">
       <!-- Project 1 (BCBSM) -->
-      <div class="flex flex-col items-center project-card bg-beige-light rounded-lg shadow-lg">
+      <div class="flex flex-col items-center project-card bg-color-grey/30 rounded-lg shadow-lg">
         <div
           class="flex flex-col items-center h-full p-7 border border-beige-dark bg-white rounded-lg overflow-hidden ">
           <!-- <div class="aspect-[16/9] overflow-hidden rounded-t-lg"> -->
@@ -140,5 +141,40 @@
         </div>
       </div>
     </ng-container>
+  </div>
+</div>
+
+<!-- Numbers to show -->
+<div class="flex flex-col items-center px-6 py-32">
+  <span class="text-3xl font-bold text-center mb-10">
+    Proven Excellence in <span class="text-color-terracota">Digital Innovation</span>
+  </span>
+
+  <p class="py-20 max-w-3xl text-center">
+    Since 2017, Softics.io has been a trusted partner for startups, SMBs, and enterprises, delivering
+    scalable, secure, and innovative solutions that drive growth.
+  </p>
+
+  <img class="m-10 w-100 h-auto object-contain filter dark:invert" src="/images/world.jpg"/>
+  <!-- COUNTERS BOX -->
+  <div class="flex p-7 px-16 shadow-xl rounded-lg justify-center gap-12">
+
+    <ng-container *ngFor="let number of numbersToShow; let last = last">
+
+      <div class="flex flex-col items-center min-w-[100px]">
+        <span class="inline-block font-mono text-center  text-6xl">
+          
+          <!-- ✅ Ensure animated number does not resize -->
+          <app-animated-counter class="m-7" [endVal]="number.endVal" [suffix]="number.suffix"
+          [suffixClass]="'text-5xl font-semibold'"></app-animated-counter>
+        </span>
+
+        <span class="text-color-terracota font-semibold">{{ number.name }}</span>
+      </div>
+
+      <!-- Vertical Divider (not after last item) -->
+      <div *ngIf="!last" class="w-px bg-gray-300"></div>
+    </ng-container>
+
   </div>
 </div>

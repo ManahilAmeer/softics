@@ -7,11 +7,7 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "styles": [
-            "scss",
-            "src/styles.scss",
-            "node_modules/@fortawesome/fontawesome-free/css/all.min.css"
-          ]
+          "style": "scss"
         }
       },
       "root": "",
@@ -36,6 +32,7 @@
               }
             ],
             "styles": [
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
