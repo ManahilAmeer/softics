@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimatedCounterComponent } from "../animated-counter/animated-counter.component";
+import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, AnimatedCounterComponent],
+  imports: [CommonModule, AnimatedCounterComponent, FooterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })

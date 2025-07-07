@@ -1,13 +1,13 @@
 <!-- Home Section -->
 
 <section id="home"
-class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-center text-gray-900 dark:text-gray-100 transition-colors duration-500 dark:bg-hero-dark">
-<div class="container mx-auto flex flex-col items-center ">
-    <p style="color: red">🚀 New Build {{ today }}</p>
+  class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-center text-gray-900 dark:text-gray-100 transition-colors duration-500 dark:bg-hero-dark">
+  <div class="container mx-auto flex flex-col items-center ">
+    <!-- <p style="color: red">🚀 New Build {{ today }}</p> -->
     <h1 class="text-5xl md:text-6xl font-bold mb-6 dark:text-color-dark transition-all duration-500 ease-in-out">
       Change Driving Growth with Scalable
       <br>
-      <span class="text-color-terracota dark:text-gray-300 transition">Web Software Solutions</span>
+      <span class="text-terracota-200 dark:text-gray-300 transition">Web Software Solutions</span>
     </h1>
     <div class="contents">
       <p
@@ -18,7 +18,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
     </div>
     <div class="flex justify-center space-x-4  ">
       <a routerLink="/projects" (click)="goToProjects()"
-        class="projects-button bg-color-terracota text-white dark:bg-gray-800 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 hover:dark:bg-opacity-80 transition">
+        class="projects-button bg-terracota-200 text-white dark:bg-gray-800 dark:text-gray-300 px-6 py-3 rounded-lg font-semibold hover:bg-opacity-70 hover:dark:bg-opacity-80 transition">
         Book a Call
       </a>
       <a routerLink="/contact" (click)="goToContact()"
@@ -41,7 +41,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 
       <section class="flex flex-col items-center w-full mb-6 py-16 text-center overflow-hidden">
         <h2 class="text-3xl font-bold text-gray-800 dark:text-color-dark py-11">
-          <p class="text-color-terracota">
+          <p class="text-terracota-200">
             Trusted by 4,150+
           </p>
           startups, agencies, studios, and SMBs.
@@ -71,7 +71,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 <!-- Projects -->
 <div class="flex flex-col items-center mx-auto px-6 py-8">
   <h2 class="text-3xl font-bold text-center mb-12">See how we’ve Helped
-    <p class="text-color-terracota">Businesses Achieve Their Goals</p>
+    <p class="text-terracota-200">Businesses Achieve Their Goals</p>
   </h2>
   <p class="py-7">We’ve helped startups, SMBs, and enterprises achieve remarkable outcomes with our innovative
     solutions.</p>
@@ -118,7 +118,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 <!-- Services that we offer -->
 <div class="flex flex-col items-center px-6 py-32">
   <span class="text-3xl font-bold text-center mb-12">Select Your
-    <span class="text-color-terracota">Bespoke</span> Person
+    <span class="text-terracota-200">Bespoke</span> Person
   </span>
   <p class="py-8">Choose your path to digital success. Whether ideating, scaling, or optimizing, we’ve got you covered
     with our expert solutions</p>
@@ -139,7 +139,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
           </div>
         </div>
         <div class="m-7 ">
-          <span class="cursor-pointer	hover:text-color-terracota hover:font-semibold ">Get started</span>
+          <span class="cursor-pointer	hover:text-terracota-200 hover:font-semibold ">Get started</span>
         </div>
       </div>
     </ng-container>
@@ -149,7 +149,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 <!-- Numbers to show -->
 <div class="flex flex-col items-center px-6 py-32">
   <span class="text-3xl font-bold text-center mb-10">
-    Proven Excellence in <span class="text-color-terracota">Digital Innovation</span>
+    Proven Excellence in <span class="text-terracota-200">Digital Innovation</span>
   </span>
 
   <p class="py-20 max-w-3xl text-center">
@@ -157,7 +157,7 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
     scalable, secure, and innovative solutions that drive growth.
   </p>
 
-  <img class="m-10 w-100 h-auto object-contain filter dark:invert" src="/images/world.jpg"/>
+  <img class="m-10 w-100 h-auto object-contain filter dark:invert" src="/images/world.jpg" />
   <!-- COUNTERS BOX -->
   <div class="flex p-7 px-16 shadow-xl rounded-lg justify-center gap-12">
 
@@ -165,13 +165,13 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 
       <div class="flex flex-col items-center min-w-[100px]">
         <span class="inline-block font-mono text-center  text-6xl">
-          
+
           <!-- ✅ Ensure animated number does not resize -->
           <app-animated-counter class="m-7" [endVal]="number.endVal" [suffix]="number.suffix"
-          [suffixClass]="'text-5xl font-semibold'"></app-animated-counter>
+            [suffixClass]="'text-5xl font-semibold'"></app-animated-counter>
         </span>
 
-        <span class="text-color-terracota font-semibold">{{ number.name }}</span>
+        <span class="text-terracota-200 font-semibold">{{ number.name }}</span>
       </div>
 
       <!-- Vertical Divider (not after last item) -->
@@ -180,3 +180,5 @@ class="bg-hero-light text-center min-h-screen px-4 flex items-center justify-cen
 
   </div>
 </div>
+
+<app-footer></app-footer>
