@@ -26,7 +26,7 @@ jobs:
 
       - name: 🏷️ Write Version Info
         run: |
-          echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > src/version.json
+          echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
 
       - name: 🏗 Build Angular App
         run: ng build softics --configuration production
