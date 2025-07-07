@@ -53,12 +53,12 @@ export class FooterComponent {
 
   version: string = '';
 
-  constructor(private http: HttpClient) {
-    this.http.get<{ version: string }>('/version.json')
-      .subscribe(data => {
-        console.log("data",data);
+  // constructor(private http: HttpClient) {
+  //   this.http.get<{ version: string }>('/version.json')
+  //     .subscribe(data => {
+  //       console.log("data",data);
         
-        this.version = data.version;
-      });
-  }
+  //       this.version = data.version;
+  //     });
+  // }
 }
