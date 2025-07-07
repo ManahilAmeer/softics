@@ -19,6 +19,7 @@ export class HomeComponent {
   goToContact() {
     this.router.navigateByUrl('/contact')
   }
+today = new Date().toDateString();
 
   skills = [
     { name: 'Angular', icon: '/icons/angular.svg' },
