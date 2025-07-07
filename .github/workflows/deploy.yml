@@ -31,9 +31,12 @@ jobs:
       - name: 🏗 Build Angular App
         run: ng build softics --configuration production
 
-      - name: 🧪 Debug — Show contents of dist folder
+      - name: 🔄 Reset FTP Deploy Sync State
+        run: rm -f dist/softics/browser/.ftp-deploy-sync-state.json
+      
+      - name: 🧪 Debug — List contents
         run: ls -R dist/softics/browser/
-
+      
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -44,6 +47,7 @@ jobs:
           server-dir: public_html/
           dangerous-clean-slate: true
           log-level: verbose
+
 
       - name: 📧 Notify on Success
         run: echo "Deployment completed successfully on $(date)"
