@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AnimatedCounterComponent } from "../animated-counter/animated-counter.component";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule],
+  imports: [CommonModule, AnimatedCounterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -71,17 +72,40 @@ export class HomeComponent {
     {
       name: 'I have an app idea',
       description: 'I need to transform my vision into a market-ready product.',
-  icon:'icons/idea.svg'
-        },  
+      icon: 'icons/idea.svg'
+    },
     {
       name: 'I naeed a team',
       description: 'I want to hire top-tier developers for my project.',
-      icon:'icons/team.svg'
-        },  
+      icon: 'icons/team.svg'
+    },
     {
       name: 'I need to optomize my app',
       description: 'I want to optimize and maintain my app for peak performance.',
-  icon:'icons/website.svg'
-        }
-    ]
+      icon: 'icons/website.svg'
+    }
+  ]
+
+  numbersToShow = [
+    {
+    name: 'Years of Experience',
+    endVal: 8,
+    suffix: '+'
+  },
+    {
+    name: 'Satisfied Clients',
+    endVal: 3560,
+    suffix: '+'
+  },
+    {
+    name: 'Industries Served',
+    endVal: 15,
+    suffix: '+'
+  },
+    {
+    name: 'Customer Satisfaction',
+    endVal: 90,
+    suffix: '%'
+  },
+  ]
 }
