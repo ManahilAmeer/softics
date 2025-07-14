@@ -36,17 +36,14 @@ jobs:
 
       - name: 🧪 Debug — Check prerender output exists
         run: |
-          echo "Listing dist/softics/prerender"
+          echo "Listing dist/softics"
           ls -la dist/softics
           echo "Listing index.html"
-          cat dist/softics/prerender/index.html || echo "No index.html"
+          cat dist/softics/index.html || echo "No index.html"
 
 
       - name: 🔄 Reset FTP Deploy Sync State
-        run: rm -f dist/softics/prerender/.ftp-deploy-sync-state.json
-
-      - name: 🧪 Debug — List contents
-        run: ls -R dist/softics/prerender/
+        run: rm -f dist/softics/.ftp-deploy-sync-state.json
 
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
