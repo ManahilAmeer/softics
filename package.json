@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:ssr": "ng build --configuration production && ng run softics:server",
+    "prerender": "ng run softics:prerender",
     "serve:ssr:softics": "node dist/softics/server/server.mjs"
   },
   "private": true,
