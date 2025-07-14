@@ -65,31 +65,31 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-@include mat.core();
+// @include mat.core();
 
 
-$light-primary: mat-core.define-palette(mat-core.$indigo-palette);
-$light-accent: mat-core.define-palette(mat-core.$pink-palette);
-$dark-primary: mat-core.define-palette(mat-core.$deep-purple-palette);
-$dark-accent: mat-core.define-palette(mat-core.$cyan-palette);
+// $light-primary: mat-core.define-palette(mat-core.$indigo-palette);
+// $light-accent: mat-core.define-palette(mat-core.$pink-palette);
+// $dark-primary: mat-core.define-palette(mat-core.$deep-purple-palette);
+// $dark-accent: mat-core.define-palette(mat-core.$cyan-palette);
 
-// 3. Define themes
-$light-theme: mat-core.define-light-theme((color: (primary: $light-primary,
-        accent: $light-accent,
-      )));
+// // 3. Define themes
+// $light-theme: mat-core.define-light-theme((color: (primary: $light-primary,
+//         accent: $light-accent,
+//       )));
 
-$dark-theme: mat-core.define-dark-theme((color: (primary: $dark-primary,
-        accent: $dark-accent,
-      )));
+// $dark-theme: mat-core.define-dark-theme((color: (primary: $dark-primary,
+//         accent: $dark-accent,
+//       )));
 
-// 4. Apply theme styles based on class
-.light-theme {
-  @include mat.all-component-themes($light-theme);
-}
+// // 4. Apply theme styles based on class
+// .light-theme {
+//   @include mat.all-component-themes($light-theme);
+// }
 
-.dark-theme {
-  @include mat.all-component-themes($dark-theme);
-}
+// .dark-theme {
+//   @include mat.all-component-themes($dark-theme);
+// }
 
 html {
   scroll-behavior: smooth;
