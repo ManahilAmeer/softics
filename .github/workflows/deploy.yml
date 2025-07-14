@@ -39,7 +39,7 @@ jobs:
           echo "Listing dist/softics"
           ls -la dist/softics
           echo "Listing index.html"
-          cat dist/softics/index.html || echo "No index.html"
+          cat dist/softics/browser/index.html || echo "No index.html"
 
 
       - name: 🔄 Reset FTP Deploy Sync State
@@ -52,7 +52,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/softics/
+          local-dir: dist/softics/browser/
           server-dir: ./
           dangerous-clean-slate: true
           log-level: verbose
