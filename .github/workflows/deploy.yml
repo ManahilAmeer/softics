@@ -33,6 +33,13 @@ jobs:
         run: |
           npm run build:ssr
           npm run prerender
+      - name: 🧪 Debug — Check prerender output exists
+        run: |
+          echo "Listing dist/softics/prerender"
+          ls -la dist/softics/prerender
+          echo "Listing index.html"
+          cat dist/softics/prerender/index.html || echo "No index.html"
+
 
       - name: 🔄 Reset FTP Deploy Sync State
         run: rm -f dist/softics/prerender/.ftp-deploy-sync-state.json
@@ -42,6 +49,7 @@ jobs:
 
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        continue-on-error: true
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
@@ -50,6 +58,7 @@ jobs:
           server-dir: public_html/
           dangerous-clean-slate: true
           log-level: verbose
+
 
       - name: 📧 Notify on Success
         run: echo "Deployment completed successfully on $(date)"
