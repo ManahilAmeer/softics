@@ -26,28 +26,30 @@ jobs:
 
       - name: 🏷️ Write Version Info
         run: |
+          mkdir -p public
           echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
 
-      - name: 🏗 Build Angular App
-        run: ng build softics --configuration production
+      - name: 🏗 Build Angular Universal App
+        run: |
+          npm run build:ssr
+          npm run prerender
 
       - name: 🔄 Reset FTP Deploy Sync State
-        run: rm -f dist/softics/browser/.ftp-deploy-sync-state.json
-      
+        run: rm -f dist/softics/prerender/.ftp-deploy-sync-state.json
+
       - name: 🧪 Debug — List contents
-        run: ls -R dist/softics/browser/
-      
+        run: ls -R dist/softics/prerender/
+
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/softics/browser/
+          local-dir: dist/softics/prerender/
           server-dir: public_html/
           dangerous-clean-slate: true
           log-level: verbose
-
 
       - name: 📧 Notify on Success
         run: echo "Deployment completed successfully on $(date)"
