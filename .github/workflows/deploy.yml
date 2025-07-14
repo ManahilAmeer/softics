@@ -37,7 +37,7 @@ jobs:
       - name: 🧪 Debug — Check prerender output exists
         run: |
           echo "Listing dist/softics/prerender"
-          ls -la dist/softics/prerender
+          ls -la dist/softics
           echo "Listing index.html"
           cat dist/softics/prerender/index.html || echo "No index.html"
 
@@ -55,7 +55,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/softics/prerender/
+          local-dir: dist/softics/
           server-dir: public_html/
           dangerous-clean-slate: true
           log-level: verbose
