@@ -73,6 +73,13 @@
             "outputPath": "dist/softics/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputPath": "dist/softics/server",
+              "main": "src/main.server.ts",
+              "tsConfig": "tsconfig.server.json"
+            }
           }
         },
         "prerender": {
