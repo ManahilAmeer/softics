@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "build:css": "tailwindcss -i ./src/styles.scss -o ./src/tailwind.css --minify",
     "build:ssr": "ng build --configuration production && ng run softics:server",
     "prerender": "ng run softics:prerender",
     "serve:ssr:softics": "node dist/softics/server/server.mjs"
@@ -48,7 +49,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.3",
+    "tailwindcss": "^3.4.17",
     "typescript": "~5.7.2"
   }
 }
