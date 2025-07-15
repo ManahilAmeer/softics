@@ -50,6 +50,12 @@ jobs:
           mkdir deploy
           cp -r dist/softics/browser/* deploy/
       
+      - name: 🧪 Add __live-test.txt for verification
+        run: |
+          mkdir -p deploy
+          echo "✅ Deployment verified: $(date)" > deploy/__live-test.txt
+
+
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
