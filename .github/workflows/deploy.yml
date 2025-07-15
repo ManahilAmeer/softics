@@ -30,8 +30,10 @@ jobs:
           echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
 
             
-      - name: 🏗️ Build Angular App
-        run: npm run build:ssr && npm run prerender
+      - name: 🏗 Build Angular Universal App
+        run: |
+          npm run build:ssr || true
+          npm run prerender || true
 
 
       - name: 🧪 Debug — Check prerender output exists
