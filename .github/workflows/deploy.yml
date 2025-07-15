@@ -63,7 +63,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: deploy/
-          server-dir: domains/softics.io/public_html/
+          server-dir: softics.io/public_html/
           dangerous-clean-slate: true
           log-level: verbose
 
