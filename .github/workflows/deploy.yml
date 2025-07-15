@@ -36,7 +36,7 @@ jobs:
 
       - name: 🧪 Debug — Check prerender output exists
         run: |
-          echo "Listing dist/softics"
+          echo "Listing dist/softic"
           ls -la dist/softics
           echo "Listing index.html"
           cat dist/softics/browser/index.html || echo "No index.html"
