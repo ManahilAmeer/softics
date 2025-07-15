@@ -7,18 +7,18 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.dev/guide/theming
 
+$light-primary: mat-core.define-palette(mat-core.$indigo-palette);
+$light-accent: mat-core.define-palette(mat-core.$pink-palette);
 
-html {
-  @include mat.theme((color: (theme-type: light,
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
-      ),
-      typography: Roboto,
-      density: 0,
-    ));
-}
-
-
+$light-theme: mat-core.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+  )
+));
+// Apply Angular Material core styles
+@include mat.core();
+@include mat.all-component-themes($light-theme);
 
 .navbar {
   display: flex;
