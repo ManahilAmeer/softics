@@ -42,11 +42,6 @@ jobs:
 
       - name: 🔄 Reset FTP Deploy Sync State
         run: rm -f dist/softics/.ftp-deploy-sync-state.json
-
-      - name: 🚚 Flatten contents to temp folder  
-        run: |
-          mkdir deploy
-          cp -r dist/softics/browser/* deploy/
       
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -54,7 +49,7 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: deploy/
+          local-dir: dist/softics/browser/
           server-dir: ../domains/softics.io/public_html/
           dangerous-clean-slate: true
           log-level: verbose
