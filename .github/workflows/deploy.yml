@@ -29,8 +29,9 @@ jobs:
           mkdir -p public
           echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
 
-      - name: 🏗 Build Angular Universal App
-        run: ng build --configuration production
+            
+      - name: 🏗️ Build Angular App
+        run: npm run build:ssr && npm run prerender
 
 
       - name: 🧪 Debug — Check prerender output exists
