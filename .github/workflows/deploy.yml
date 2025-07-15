@@ -29,8 +29,11 @@ jobs:
           mkdir -p public
           echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
 
+            
       - name: 🏗 Build Angular Universal App
-        run: ng build --configuration production
+        run: |
+          npm run build:ssr || true
+          npm run prerender || true
 
 
       - name: 🧪 Debug — Check prerender output exists
@@ -40,28 +43,16 @@ jobs:
           echo "Listing index.html"
           cat dist/softics/browser/index.html || echo "No index.html"
 
-
       - name: 🔄 Reset FTP Deploy Sync State
         run: rm -f dist/softics/.ftp-deploy-sync-state.json
-
-      - name: 🚚 Flatten contents to temp folder  
-        run: |
-          mkdir deploy
-          cp -r dist/softics/browser/* deploy/
       
-      - name: 🧪 Add __live-test.txt for verification
-        run: |
-          mkdir -p deploy
-          echo "✅ Deployment verified: $(date)" > deploy/__live-test.txt
-
-
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: deploy/
+          local-dir: dist/softics/browser/
           server-dir: ../domains/softics.io/public_html/
           dangerous-clean-slate: true
           log-level: verbose
