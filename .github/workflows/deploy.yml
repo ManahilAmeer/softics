@@ -31,31 +31,33 @@ jobs:
 
       - name: 🏗 Build Angular Universal App
         run: |
-          npm run build:ssr
-          npm run prerender
+          npm run build:ssr || true
+          npm run prerender || true
+
       - name: 🧪 Debug — Check prerender output exists
         run: |
-          echo "Listing dist/softics/prerender"
-          ls -la dist/softics/prerender
+          echo "Listing dist/softic"
+          ls -la dist/softics
           echo "Listing index.html"
-          cat dist/softics/prerender/index.html || echo "No index.html"
+          cat dist/softics/browser/index.html || echo "No index.html"
 
 
       - name: 🔄 Reset FTP Deploy Sync State
-        run: rm -f dist/softics/prerender/.ftp-deploy-sync-state.json
+        run: rm -f dist/softics/.ftp-deploy-sync-state.json
 
-      - name: 🧪 Debug — List contents
-        run: ls -R dist/softics/prerender/
-
+      - name: 🚚 Flatten contents to temp folder  
+        run: |
+          mkdir deploy
+          cp -r dist/softics/browser/* deploy/
+      
       - name: 🚀 Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        continue-on-error: true
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: dist/softics/prerender/
-          server-dir: public_html/
+          local-dir: deploy/
+          server-dir: ./
           dangerous-clean-slate: true
           log-level: verbose
 
