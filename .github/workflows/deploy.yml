@@ -28,7 +28,8 @@ jobs:
         run: |
           mkdir -p public
           echo "{\"version\": \"$(date +'%Y-%m-%d %H:%M:%S') - $(git rev-parse --short HEAD)\"}" > public/version.json
-
+      - name: 🌀 Build Tailwind CSS
+        run: npm run build:css || true
             
       - name: 🏗 Build Angular Universal App
         run: |
