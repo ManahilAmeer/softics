@@ -40,11 +40,6 @@ jobs:
           echo "Listing index.html"
           cat dist/softics/browser/index.html || echo "No index.html"
 
-      - name: 🧪 Check Tailwind CSS output
-        run: |
-          echo "Compiled CSS size:"
-          du -sh dist/softics/browser/styles.*.css
-
       - name: 🔄 Reset FTP Deploy Sync State
         run: rm -f dist/softics/.ftp-deploy-sync-state.json
 
