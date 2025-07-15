@@ -100,6 +100,21 @@
               "/resume"
             ]
           }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "softics:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "softics:build:production"
+            },
+            "development": {
+              "buildTarget": "softics:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         }
       }
     }
